@@ -1,0 +1,665 @@
+<?xml version="1.0"?>
+<AlteryxDocument yxmdVer="2021.3">
+  <Nodes>
+    <Node ToolID="1">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
+        <Position x="54" y="54" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Passwords />
+          <File OutputFileName="" FileFormat="19" SearchSubDirs="False" RecordLimit="">..\FullCleansedData.yxdb</File>
+          <FormatSpecificOptions />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>FullCleansedData.yxdb</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="CountyCode" size="254" source="Formula: [_CurrentField_]" type="V_WString" />
+            <Field name="LOCALITY" size="254" source="Formula: [_CurrentField_]" type="V_WString" />
+            <Field name="Region" size="254" source="Formula: [_CurrentField_]" type="V_WString" />
+            <Field name="Year" size="254" source="Formula: [_CurrentField_]" type="V_WString" />
+            <Field description="TextToColumns: Parsed from Year-Month" name="Month" size="254" source="Formula: [_CurrentField_]" type="V_WString" />
+            <Field name="Month Name" size="1073741823" source="Formula: [_CurrentField_]" type="V_WString" />
+            <Field name="Employed" source="Formula: [_CurrentField_]" type="Int32" />
+            <Field name="Unemployed" source="Formula: [_CurrentField_]" type="Int32" />
+            <Field name="UnemploymentRate" scale="2" size="10" source="Formula: [_CurrentField_]" type="FixedDecimal" />
+            <Field name="LaborForce" source="Formula: [_CurrentField_]" type="Int32" />
+            <Field name="HOUSEHOLDS PA" source="Formula: [_CurrentField_]" type="Int32" />
+            <Field name="HOUSEHOLDS NPA" source="Formula: [_CurrentField_]" type="Int32" />
+            <Field name="HOUSEHOLDS TOTAL" source="Formula: [_CurrentField_]" type="Int32" />
+            <Field name="PERSONS PA" source="Formula: [_CurrentField_]" type="Int32" />
+            <Field name="PERSONS NPA" source="Formula: [_CurrentField_]" type="Int32" />
+            <Field name="PERSONS TOTAL" source="Formula: [_CurrentField_]" type="Int32" />
+            <Field name="ISSUANCE AMOUNT PA" source="Formula: [_CurrentField_]" type="Int32" />
+            <Field name="ISSUANCE AMOUNT NPA" source="Formula: [_CurrentField_]" type="Int32" />
+            <Field name="ISSUANCE AMOUNT TOTAL" source="Formula: [_CurrentField_]" type="Int32" />
+            <Field name="PA Avg# Per Household" source="Formula: [_CurrentField_]" type="Int32" />
+            <Field name="NPA Avg# Per Household" source="Formula: [_CurrentField_]" type="Int32" />
+            <Field name="All SNAP Avg# Per Household" source="Formula: [_CurrentField_]" type="Int32" />
+            <Field name="Quarter" size="1073741823" source="Formula: IF [Month] = &quot;01&quot; OR [Month] = &quot;02&quot; OR [Month] = &quot;03&quot;&#xA;THEN &quot;Q1&quot;&#xA;&#xA;ELSEIF [Month] = &quot;04&quot; OR [Month] = &quot;05&quot; OR [Month] = &quot;06&quot;&#xA;THEN &quot;Q2&quot;&#xA;&#xA;ELSEIF [Month] = &quot;07&quot; OR [Month] = &quot;08&quot; OR [Month] = &quot;09&quot;&#xA;THEN &quot;Q3&quot;&#xA;&#xA;ELSE &quot;Q4&quot;&#xA;&#xA;ENDIF" type="V_WString" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileInput" />
+    </Node>
+    <Node ToolID="2">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
+        <Position x="54" y="162" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Passwords>49B64C1CFB3B9D77781C322DF</Passwords>
+          <File RecordLimit="" FileFormat="23">odbc:DSN=MySQL;UID=root;PWD=__EncPwd1__|||select dbfinalproject.dim_date.* 
+from dbfinalproject.dim_date</File>
+          <FormatSpecificOptions>
+            <PreSQL />
+            <ReadCentroids>False</ReadCentroids>
+            <PreSQLOnConfig>True</PreSQLOnConfig>
+            <NoProgress>True</NoProgress>
+            <CacheData>False</CacheData>
+            <TableStyle>Quoted</TableStyle>
+            <ReadUncommitted>False</ReadUncommitted>
+            <PostSQL />
+          </FormatSpecificOptions>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <AnnotationText>Read in DateKey</AnnotationText>
+          <DefaultAnnotationText>DSN=MySQL
+Query=select dbfinalproject.dim_da...</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="DateKey" source="File: odbc:DSN=MySQL;UID=root;PWD=__EncPwd1__|||select dbfinalproject.dim_date.* &#xA;from dbfinalproject.dim_date" type="Int32" />
+            <Field name="CountyCode" size="254" source="File: odbc:DSN=MySQL;UID=root;PWD=__EncPwd1__|||select dbfinalproject.dim_date.* &#xA;from dbfinalproject.dim_date" type="V_String" />
+            <Field name="Year" size="254" source="File: odbc:DSN=MySQL;UID=root;PWD=__EncPwd1__|||select dbfinalproject.dim_date.* &#xA;from dbfinalproject.dim_date" type="V_String" />
+            <Field name="Month" size="254" source="File: odbc:DSN=MySQL;UID=root;PWD=__EncPwd1__|||select dbfinalproject.dim_date.* &#xA;from dbfinalproject.dim_date" type="V_String" />
+            <Field name="Month Name" size="16777216" source="File: odbc:DSN=MySQL;UID=root;PWD=__EncPwd1__|||select dbfinalproject.dim_date.* &#xA;from dbfinalproject.dim_date" type="V_String" />
+            <Field name="Quarter" size="16777216" source="File: odbc:DSN=MySQL;UID=root;PWD=__EncPwd1__|||select dbfinalproject.dim_date.* &#xA;from dbfinalproject.dim_date" type="V_String" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileInput" />
+    </Node>
+    <Node ToolID="3">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Join.Join">
+        <Position x="174" y="114" />
+      </GuiSettings>
+      <Properties>
+        <Configuration joinByRecordPos="False">
+          <JoinInfo connection="Left">
+            <Field field="CountyCode" />
+            <Field field="Year" />
+            <Field field="Month" />
+          </JoinInfo>
+          <JoinInfo connection="Right">
+            <Field field="CountyCode" />
+            <Field field="Year" />
+            <Field field="Month" />
+          </JoinInfo>
+          <SelectConfiguration>
+            <Configuration outputConnection="Join">
+              <OrderChanged value="True" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="Right_DateKey" selected="True" input="Right_" />
+                <SelectField field="Left_CountyCode" selected="True" input="Left_" />
+                <SelectField field="Left_LOCALITY" selected="True" input="Left_" />
+                <SelectField field="Left_Region" selected="True" input="Left_" />
+                <SelectField field="Left_Year" selected="True" input="Left_" />
+                <SelectField field="Left_Month" selected="True" input="Left_" />
+                <SelectField field="Left_Month Name" selected="True" input="Left_" />
+                <SelectField field="Left_Quarter" selected="True" input="Left_" />
+                <SelectField field="Left_Employed" selected="False" input="Left_" />
+                <SelectField field="Left_Unemployed" selected="False" input="Left_" />
+                <SelectField field="Left_UnemploymentRate" selected="True" input="Left_" />
+                <SelectField field="Left_LaborForce" selected="False" input="Left_" />
+                <SelectField field="Left_HOUSEHOLDS PA" selected="False" input="Left_" />
+                <SelectField field="Left_HOUSEHOLDS NPA" selected="False" input="Left_" />
+                <SelectField field="Left_HOUSEHOLDS TOTAL" selected="True" input="Left_" />
+                <SelectField field="Left_PERSONS PA" selected="False" input="Left_" />
+                <SelectField field="Left_PERSONS NPA" selected="False" input="Left_" />
+                <SelectField field="Left_PERSONS TOTAL" selected="True" input="Left_" />
+                <SelectField field="Left_ISSUANCE AMOUNT PA" selected="False" input="Left_" />
+                <SelectField field="Left_ISSUANCE AMOUNT NPA" selected="False" input="Left_" />
+                <SelectField field="Left_ISSUANCE AMOUNT TOTAL" selected="True" input="Left_" />
+                <SelectField field="Left_PA Avg# Per Household" selected="False" input="Left_" />
+                <SelectField field="Left_NPA Avg# Per Household" selected="False" input="Left_" />
+                <SelectField field="Left_All SNAP Avg# Per Household" selected="True" input="Left_" />
+                <SelectField field="Right_CountyCode" selected="False" rename="Right_CountyCode" input="Right_" />
+                <SelectField field="Right_Year" selected="False" rename="Right_Year" input="Right_" />
+                <SelectField field="Right_Month" selected="False" rename="Right_Month" input="Right_" />
+                <SelectField field="Right_Month Name" selected="False" rename="Right_Month Name" input="Right_" />
+                <SelectField field="Right_Quarter" selected="False" rename="Right_Quarter" input="Right_" />
+                <SelectField field="*Unknown" selected="True" />
+              </SelectFields>
+            </Configuration>
+          </SelectConfiguration>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxJoin" />
+    </Node>
+    <Node ToolID="4">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Join.Join">
+        <Position x="330" y="126" />
+      </GuiSettings>
+      <Properties>
+        <Configuration joinByRecordPos="False">
+          <JoinInfo connection="Left">
+            <Field field="CountyCode" />
+            <Field field="Year" />
+            <Field field="Month" />
+          </JoinInfo>
+          <JoinInfo connection="Right">
+            <Field field="CountyCode" />
+            <Field field="Year" />
+            <Field field="Month" />
+          </JoinInfo>
+          <SelectConfiguration>
+            <Configuration outputConnection="Join">
+              <OrderChanged value="True" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="Left_DateKey" selected="True" input="Left_" />
+                <SelectField field="Right_LocationKey" selected="True" input="Right_" />
+                <SelectField field="Left_CountyCode" selected="True" input="Left_" />
+                <SelectField field="Left_LOCALITY" selected="True" input="Left_" />
+                <SelectField field="Left_Region" selected="True" input="Left_" />
+                <SelectField field="Left_Year" selected="True" input="Left_" />
+                <SelectField field="Left_Month" selected="True" input="Left_" />
+                <SelectField field="Left_Month Name" selected="True" input="Left_" />
+                <SelectField field="Left_Quarter" selected="True" input="Left_" />
+                <SelectField field="Left_Employed" selected="False" input="Left_" />
+                <SelectField field="Left_Unemployed" selected="False" input="Left_" />
+                <SelectField field="Left_UnemploymentRate" selected="True" input="Left_" />
+                <SelectField field="Left_LaborForce" selected="False" input="Left_" />
+                <SelectField field="Left_HOUSEHOLDS PA" selected="False" input="Left_" />
+                <SelectField field="Left_HOUSEHOLDS NPA" selected="False" input="Left_" />
+                <SelectField field="Left_HOUSEHOLDS TOTAL" selected="True" input="Left_" />
+                <SelectField field="Left_PERSONS PA" selected="False" input="Left_" />
+                <SelectField field="Left_PERSONS NPA" selected="False" input="Left_" />
+                <SelectField field="Left_PERSONS TOTAL" selected="True" input="Left_" />
+                <SelectField field="Left_ISSUANCE AMOUNT PA" selected="False" input="Left_" />
+                <SelectField field="Left_ISSUANCE AMOUNT NPA" selected="False" input="Left_" />
+                <SelectField field="Left_ISSUANCE AMOUNT TOTAL" selected="True" input="Left_" />
+                <SelectField field="Left_PA Avg# Per Household" selected="False" input="Left_" />
+                <SelectField field="Left_NPA Avg# Per Household" selected="False" input="Left_" />
+                <SelectField field="Left_All SNAP Avg# Per Household" selected="True" input="Left_" />
+                <SelectField field="Right_CountyCode" selected="False" rename="Right_CountyCode" input="Right_" />
+                <SelectField field="Right_LOCALITY" selected="False" rename="Right_LOCALITY" input="Right_" />
+                <SelectField field="Right_Region" selected="False" rename="Right_Region" input="Right_" />
+                <SelectField field="Right_Year" selected="False" rename="Right_Year" input="Right_" />
+                <SelectField field="Right_Month" selected="False" rename="Right_Month" input="Right_" />
+                <SelectField field="Right_DateKey" selected="False" rename="Right_DateKey" input="Right_" />
+                <SelectField field="Right_Month Name" selected="False" rename="Right_Month Name" input="Right_" />
+                <SelectField field="Right_Quarter" selected="False" rename="Right_Quarter" input="Right_" />
+                <SelectField field="*Unknown" selected="True" />
+              </SelectFields>
+            </Configuration>
+          </SelectConfiguration>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxJoin" />
+    </Node>
+    <Node ToolID="5">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
+        <Position x="198" y="174" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Passwords>49B64C1CFB3B9D77781C322DF</Passwords>
+          <File RecordLimit="" FileFormat="23">odbc:DSN=MySQL;UID=root;PWD=__EncPwd1__|||select dbfinalproject.dim_location.* 
+from dbfinalproject.dim_location</File>
+          <FormatSpecificOptions>
+            <PreSQL />
+            <ReadCentroids>False</ReadCentroids>
+            <PreSQLOnConfig>True</PreSQLOnConfig>
+            <NoProgress>True</NoProgress>
+            <CacheData>False</CacheData>
+            <TableStyle>Quoted</TableStyle>
+            <ReadUncommitted>False</ReadUncommitted>
+            <PostSQL />
+          </FormatSpecificOptions>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <AnnotationText>Read in LocationKey</AnnotationText>
+          <DefaultAnnotationText>DSN=MySQL
+Query=select dbfinalproject.dim_lo...</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="LocationKey" source="File: odbc:DSN=MySQL;UID=root;PWD=__EncPwd1__|||select dbfinalproject.dim_location.* &#xA;from dbfinalproject.dim_location" type="Int32" />
+            <Field name="CountyCode" size="254" source="File: odbc:DSN=MySQL;UID=root;PWD=__EncPwd1__|||select dbfinalproject.dim_location.* &#xA;from dbfinalproject.dim_location" type="V_String" />
+            <Field name="LOCALITY" size="254" source="File: odbc:DSN=MySQL;UID=root;PWD=__EncPwd1__|||select dbfinalproject.dim_location.* &#xA;from dbfinalproject.dim_location" type="V_String" />
+            <Field name="Region" size="254" source="File: odbc:DSN=MySQL;UID=root;PWD=__EncPwd1__|||select dbfinalproject.dim_location.* &#xA;from dbfinalproject.dim_location" type="V_String" />
+            <Field name="Year" size="254" source="File: odbc:DSN=MySQL;UID=root;PWD=__EncPwd1__|||select dbfinalproject.dim_location.* &#xA;from dbfinalproject.dim_location" type="V_String" />
+            <Field name="Month" size="254" source="File: odbc:DSN=MySQL;UID=root;PWD=__EncPwd1__|||select dbfinalproject.dim_location.* &#xA;from dbfinalproject.dim_location" type="V_String" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileInput" />
+    </Node>
+    <Node ToolID="6">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
+        <Position x="330" y="246" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Passwords>49B64C1CFB3B9D77781C322DF</Passwords>
+          <File RecordLimit="" FileFormat="23">odbc:DSN=MySQL;UID=root;PWD=__EncPwd1__|||select dbfinalproject.dim_employment.* 
+from dbfinalproject.dim_employment</File>
+          <FormatSpecificOptions>
+            <PreSQL />
+            <ReadCentroids>False</ReadCentroids>
+            <PreSQLOnConfig>True</PreSQLOnConfig>
+            <NoProgress>True</NoProgress>
+            <CacheData>False</CacheData>
+            <TableStyle>Quoted</TableStyle>
+            <ReadUncommitted>False</ReadUncommitted>
+            <PostSQL />
+          </FormatSpecificOptions>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <AnnotationText>Read in EmploymentKey.</AnnotationText>
+          <DefaultAnnotationText>DSN=MySQL
+Query=select dbfinalproject.dim_em...</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="EmploymentKey" source="File: odbc:DSN=MySQL;UID=root;PWD=__EncPwd1__|||select dbfinalproject.dim_employment.* &#xA;from dbfinalproject.dim_employment" type="Int32" />
+            <Field name="CountyCode" size="254" source="File: odbc:DSN=MySQL;UID=root;PWD=__EncPwd1__|||select dbfinalproject.dim_employment.* &#xA;from dbfinalproject.dim_employment" type="V_String" />
+            <Field name="Year" size="254" source="File: odbc:DSN=MySQL;UID=root;PWD=__EncPwd1__|||select dbfinalproject.dim_employment.* &#xA;from dbfinalproject.dim_employment" type="V_String" />
+            <Field name="Month" size="254" source="File: odbc:DSN=MySQL;UID=root;PWD=__EncPwd1__|||select dbfinalproject.dim_employment.* &#xA;from dbfinalproject.dim_employment" type="V_String" />
+            <Field name="LaborForce" source="File: odbc:DSN=MySQL;UID=root;PWD=__EncPwd1__|||select dbfinalproject.dim_employment.* &#xA;from dbfinalproject.dim_employment" type="Int32" />
+            <Field name="Employed" source="File: odbc:DSN=MySQL;UID=root;PWD=__EncPwd1__|||select dbfinalproject.dim_employment.* &#xA;from dbfinalproject.dim_employment" type="Int32" />
+            <Field name="Unemployed" source="File: odbc:DSN=MySQL;UID=root;PWD=__EncPwd1__|||select dbfinalproject.dim_employment.* &#xA;from dbfinalproject.dim_employment" type="Int32" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileInput" />
+    </Node>
+    <Node ToolID="7">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Join.Join">
+        <Position x="474" y="138" />
+      </GuiSettings>
+      <Properties>
+        <Configuration joinByRecordPos="False">
+          <JoinInfo connection="Left">
+            <Field field="CountyCode" />
+            <Field field="Year" />
+            <Field field="Month" />
+          </JoinInfo>
+          <JoinInfo connection="Right">
+            <Field field="CountyCode" />
+            <Field field="Year" />
+            <Field field="Month" />
+          </JoinInfo>
+          <SelectConfiguration>
+            <Configuration outputConnection="Join">
+              <OrderChanged value="True" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="Left_DateKey" selected="True" input="Left_" />
+                <SelectField field="Left_LocationKey" selected="True" input="Left_" />
+                <SelectField field="Right_EmploymentKey" selected="True" input="Right_" />
+                <SelectField field="Left_CountyCode" selected="True" input="Left_" />
+                <SelectField field="Left_LOCALITY" selected="True" input="Left_" />
+                <SelectField field="Left_Region" selected="True" input="Left_" />
+                <SelectField field="Left_Year" selected="True" input="Left_" />
+                <SelectField field="Left_Month" selected="True" input="Left_" />
+                <SelectField field="Left_Month Name" selected="True" input="Left_" />
+                <SelectField field="Left_Quarter" selected="True" input="Left_" />
+                <SelectField field="Left_Employed" selected="False" input="Left_" />
+                <SelectField field="Left_Unemployed" selected="False" input="Left_" />
+                <SelectField field="Left_UnemploymentRate" selected="True" input="Left_" />
+                <SelectField field="Left_LaborForce" selected="False" input="Left_" />
+                <SelectField field="Left_HOUSEHOLDS PA" selected="False" input="Left_" />
+                <SelectField field="Left_HOUSEHOLDS NPA" selected="False" input="Left_" />
+                <SelectField field="Left_HOUSEHOLDS TOTAL" selected="True" input="Left_" />
+                <SelectField field="Left_PERSONS PA" selected="False" input="Left_" />
+                <SelectField field="Left_PERSONS NPA" selected="False" input="Left_" />
+                <SelectField field="Left_PERSONS TOTAL" selected="True" input="Left_" />
+                <SelectField field="Left_ISSUANCE AMOUNT PA" selected="False" input="Left_" />
+                <SelectField field="Left_ISSUANCE AMOUNT NPA" selected="False" input="Left_" />
+                <SelectField field="Left_ISSUANCE AMOUNT TOTAL" selected="True" input="Left_" />
+                <SelectField field="Left_PA Avg# Per Household" selected="False" input="Left_" />
+                <SelectField field="Left_NPA Avg# Per Household" selected="False" input="Left_" />
+                <SelectField field="Left_All SNAP Avg# Per Household" selected="True" input="Left_" />
+                <SelectField field="Right_CountyCode" selected="False" rename="Right_CountyCode" input="Right_" />
+                <SelectField field="Right_Year" selected="False" rename="Right_Year" input="Right_" />
+                <SelectField field="Right_Month" selected="False" rename="Right_Month" input="Right_" />
+                <SelectField field="Right_LaborForce" selected="True" rename="Right_LaborForce" input="Right_" />
+                <SelectField field="Right_Employed" selected="True" rename="Right_Employed" input="Right_" />
+                <SelectField field="Right_Unemployed" selected="True" rename="Right_Unemployed" input="Right_" />
+                <SelectField field="*Unknown" selected="True" />
+              </SelectFields>
+            </Configuration>
+          </SelectConfiguration>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxJoin" />
+    </Node>
+    <Node ToolID="8">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
+        <Position x="522" y="270" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Passwords>49B64C1CFB3B9D77781C322DF</Passwords>
+          <File RecordLimit="" FileFormat="23">odbc:DSN=MySQL;UID=root;PWD=__EncPwd1__|||select dbfinalproject.dim_household.HouseholdKey,
+	dbfinalproject.dim_household.* 
+from dbfinalproject.dim_household</File>
+          <FormatSpecificOptions>
+            <PreSQL />
+            <ReadCentroids>False</ReadCentroids>
+            <PreSQLOnConfig>True</PreSQLOnConfig>
+            <NoProgress>True</NoProgress>
+            <CacheData>False</CacheData>
+            <TableStyle>Quoted</TableStyle>
+            <ReadUncommitted>False</ReadUncommitted>
+            <PostSQL />
+          </FormatSpecificOptions>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <AnnotationText>Read in Households.</AnnotationText>
+          <DefaultAnnotationText>DSN=MySQL
+Query=select dbfinalproject.dim_ho...</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="HouseholdKey" source="File: odbc:DSN=MySQL;UID=root;PWD=__EncPwd1__|||select dbfinalproject.dim_household.HouseholdKey,&#xA;	dbfinalproject.dim_household.* &#xA;from dbfinalproject.dim_household" type="Int32" />
+            <Field name="HouseholdKey2" source="File: odbc:DSN=MySQL;UID=root;PWD=__EncPwd1__|||select dbfinalproject.dim_household.HouseholdKey,&#xA;	dbfinalproject.dim_household.* &#xA;from dbfinalproject.dim_household" type="Int32" />
+            <Field name="CountyCode" size="254" source="File: odbc:DSN=MySQL;UID=root;PWD=__EncPwd1__|||select dbfinalproject.dim_household.HouseholdKey,&#xA;	dbfinalproject.dim_household.* &#xA;from dbfinalproject.dim_household" type="V_String" />
+            <Field name="Year" size="254" source="File: odbc:DSN=MySQL;UID=root;PWD=__EncPwd1__|||select dbfinalproject.dim_household.HouseholdKey,&#xA;	dbfinalproject.dim_household.* &#xA;from dbfinalproject.dim_household" type="V_String" />
+            <Field name="Month" size="254" source="File: odbc:DSN=MySQL;UID=root;PWD=__EncPwd1__|||select dbfinalproject.dim_household.HouseholdKey,&#xA;	dbfinalproject.dim_household.* &#xA;from dbfinalproject.dim_household" type="V_String" />
+            <Field name="HOUSEHOLDS PA" source="File: odbc:DSN=MySQL;UID=root;PWD=__EncPwd1__|||select dbfinalproject.dim_household.HouseholdKey,&#xA;	dbfinalproject.dim_household.* &#xA;from dbfinalproject.dim_household" type="Int32" />
+            <Field name="HOUSEHOLDS NPA" source="File: odbc:DSN=MySQL;UID=root;PWD=__EncPwd1__|||select dbfinalproject.dim_household.HouseholdKey,&#xA;	dbfinalproject.dim_household.* &#xA;from dbfinalproject.dim_household" type="Int32" />
+            <Field name="PERSONS PA" source="File: odbc:DSN=MySQL;UID=root;PWD=__EncPwd1__|||select dbfinalproject.dim_household.HouseholdKey,&#xA;	dbfinalproject.dim_household.* &#xA;from dbfinalproject.dim_household" type="Int32" />
+            <Field name="PERSONS NPA" source="File: odbc:DSN=MySQL;UID=root;PWD=__EncPwd1__|||select dbfinalproject.dim_household.HouseholdKey,&#xA;	dbfinalproject.dim_household.* &#xA;from dbfinalproject.dim_household" type="Int32" />
+            <Field name="ISSUANCE AMOUNT PA" source="File: odbc:DSN=MySQL;UID=root;PWD=__EncPwd1__|||select dbfinalproject.dim_household.HouseholdKey,&#xA;	dbfinalproject.dim_household.* &#xA;from dbfinalproject.dim_household" type="Int32" />
+            <Field name="ISSUANCE AMOUNT NPA" source="File: odbc:DSN=MySQL;UID=root;PWD=__EncPwd1__|||select dbfinalproject.dim_household.HouseholdKey,&#xA;	dbfinalproject.dim_household.* &#xA;from dbfinalproject.dim_household" type="Int32" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileInput" />
+    </Node>
+    <Node ToolID="9">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Join.Join">
+        <Position x="618" y="186" />
+      </GuiSettings>
+      <Properties>
+        <Configuration joinByRecordPos="False">
+          <JoinInfo connection="Left">
+            <Field field="CountyCode" />
+            <Field field="Year" />
+            <Field field="Month" />
+          </JoinInfo>
+          <JoinInfo connection="Right">
+            <Field field="CountyCode" />
+            <Field field="Year" />
+            <Field field="Month" />
+          </JoinInfo>
+          <SelectConfiguration>
+            <Configuration outputConnection="Join">
+              <OrderChanged value="True" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="Left_DateKey" selected="True" input="Left_" />
+                <SelectField field="Left_LocationKey" selected="True" input="Left_" />
+                <SelectField field="Left_EmploymentKey" selected="True" input="Left_" />
+                <SelectField field="Right_HouseholdKey" selected="True" input="Right_" />
+                <SelectField field="Left_CountyCode" selected="True" input="Left_" />
+                <SelectField field="Left_LOCALITY" selected="True" input="Left_" />
+                <SelectField field="Left_Region" selected="True" input="Left_" />
+                <SelectField field="Left_Year" selected="True" input="Left_" />
+                <SelectField field="Left_Month" selected="True" input="Left_" />
+                <SelectField field="Left_Month Name" selected="True" input="Left_" />
+                <SelectField field="Left_Quarter" selected="True" input="Left_" />
+                <SelectField field="Left_Right_LaborForce" selected="True" input="Left_" />
+                <SelectField field="Left_Right_Employed" selected="True" input="Left_" />
+                <SelectField field="Left_Right_Unemployed" selected="True" input="Left_" />
+                <SelectField field="Right_HouseholdKey2" selected="False" input="Right_" />
+                <SelectField field="Right_CountyCode" selected="False" rename="Right_CountyCode" input="Right_" />
+                <SelectField field="Right_Year" selected="False" rename="Right_Year" input="Right_" />
+                <SelectField field="Right_Month" selected="False" rename="Right_Month" input="Right_" />
+                <SelectField field="Right_HOUSEHOLDS PA" selected="True" input="Right_" />
+                <SelectField field="Right_HOUSEHOLDS NPA" selected="True" input="Right_" />
+                <SelectField field="Right_PERSONS PA" selected="True" input="Right_" />
+                <SelectField field="Right_PERSONS NPA" selected="True" input="Right_" />
+                <SelectField field="Right_ISSUANCE AMOUNT PA" selected="True" input="Right_" />
+                <SelectField field="Right_ISSUANCE AMOUNT NPA" selected="True" input="Right_" />
+                <SelectField field="Left_UnemploymentRate" selected="True" input="Left_" />
+                <SelectField field="Left_HOUSEHOLDS TOTAL" selected="True" input="Left_" />
+                <SelectField field="Left_PERSONS TOTAL" selected="True" input="Left_" />
+                <SelectField field="Left_ISSUANCE AMOUNT TOTAL" selected="True" input="Left_" />
+                <SelectField field="Left_All SNAP Avg# Per Household" selected="True" input="Left_" />
+                <SelectField field="*Unknown" selected="True" />
+              </SelectFields>
+            </Configuration>
+          </SelectConfiguration>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxJoin" />
+    </Node>
+    <Node ToolID="10">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="702" y="186" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="True" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="DateKey" selected="True" />
+            <SelectField field="LocationKey" selected="True" />
+            <SelectField field="EmploymentKey" selected="True" />
+            <SelectField field="HouseholdKey" selected="True" />
+            <SelectField field="CountyCode" selected="False" />
+            <SelectField field="LOCALITY" selected="False" />
+            <SelectField field="Region" selected="False" />
+            <SelectField field="Year" selected="False" />
+            <SelectField field="Month" selected="False" />
+            <SelectField field="Month Name" selected="False" />
+            <SelectField field="Quarter" selected="False" />
+            <SelectField field="Right_LaborForce" selected="False" />
+            <SelectField field="Right_Employed" selected="False" />
+            <SelectField field="Right_Unemployed" selected="False" />
+            <SelectField field="HOUSEHOLDS PA" selected="False" />
+            <SelectField field="HOUSEHOLDS NPA" selected="False" />
+            <SelectField field="PERSONS PA" selected="False" />
+            <SelectField field="PERSONS NPA" selected="False" />
+            <SelectField field="ISSUANCE AMOUNT PA" selected="False" />
+            <SelectField field="ISSUANCE AMOUNT NPA" selected="False" />
+            <SelectField field="HOUSEHOLDS TOTAL" selected="True" />
+            <SelectField field="PERSONS TOTAL" selected="True" />
+            <SelectField field="ISSUANCE AMOUNT TOTAL" selected="True" />
+            <SelectField field="All SNAP Avg# Per Household" selected="True" />
+            <SelectField field="UnemploymentRate" selected="True" />
+            <SelectField field="*Unknown" selected="True" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="11">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Sort.Sort">
+        <Position x="786" y="186" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <SortInfo locale="1033">
+            <Field field="DateKey" order="Ascending" />
+          </SortInfo>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>DateKey - Ascending</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSort" />
+    </Node>
+    <Node ToolID="12">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileOutput.DbFileOutput">
+        <Position x="894" y="186" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <File MaxRecords="" FileFormat="23">odbc:DSN=MySQL;UID=root;PWD=__EncPwd1__|||fact_table</File>
+          <Passwords>49B64C1CFB3B9D77781C322DF</Passwords>
+          <FormatSpecificOptions>
+            <SpatialObjSize>8000</SpatialObjSize>
+            <TransactionSize>10000</TransactionSize>
+            <IgnoreDropTableSQLErrors>False</IgnoreDropTableSQLErrors>
+            <PostSQL>ALTER TABLE `dbfinalproject`.`fact_table` 
+CHANGE COLUMN `DateKey` `DateKey` INT NOT NULL ,
+CHANGE COLUMN `LocationKey` `LocationKey` INT NOT NULL ,
+CHANGE COLUMN `EmploymentKey` `EmploymentKey` INT NOT NULL ,
+CHANGE COLUMN `HouseholdKey` `HouseholdKey` INT NOT NULL ,
+ADD PRIMARY KEY (`DateKey`, `LocationKey`, `HouseholdKey`, `EmploymentKey`);
+;</PostSQL>
+            <TableStyle>Quoted</TableStyle>
+            <PreSQL>USE dbfinalproject;
+DROP TABLE IF EXISTS fact_table;</PreSQL>
+            <TransactionMessages>False</TransactionMessages>
+            <OutputOption>Create</OutputOption>
+          </FormatSpecificOptions>
+          <MultiFile value="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>DSN=MySQL
+Query=fact_table</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileOutput" />
+    </Node>
+  </Nodes>
+  <Connections>
+    <Connection>
+      <Origin ToolID="1" Connection="Output" />
+      <Destination ToolID="3" Connection="Left" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="2" Connection="Output" />
+      <Destination ToolID="3" Connection="Right" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="3" Connection="Join" />
+      <Destination ToolID="4" Connection="Left" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="5" Connection="Output" />
+      <Destination ToolID="4" Connection="Right" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="4" Connection="Join" />
+      <Destination ToolID="7" Connection="Left" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="6" Connection="Output" />
+      <Destination ToolID="7" Connection="Right" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="7" Connection="Join" />
+      <Destination ToolID="9" Connection="Left" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="8" Connection="Output" />
+      <Destination ToolID="9" Connection="Right" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="9" Connection="Join" />
+      <Destination ToolID="10" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="10" Connection="Output" />
+      <Destination ToolID="11" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="11" Connection="Output" />
+      <Destination ToolID="12" Connection="Input" />
+    </Connection>
+  </Connections>
+  <Properties>
+    <Memory default="True" />
+    <GlobalRecordLimit value="0" />
+    <TempFiles default="True" />
+    <Annotation on="True" includeToolName="False" />
+    <ConvErrorLimit value="10" />
+    <ConvErrorLimit_Stop value="False" />
+    <CancelOnError value="False" />
+    <DisableBrowse value="False" />
+    <EnablePerformanceProfiling value="False" />
+    <PredictiveToolsCodePage value="1252" />
+    <DisableAllOutput value="False" />
+    <ShowAllMacroMessages value="False" />
+    <ShowConnectionStatusIsOn value="True" />
+    <ShowConnectionStatusOnlyWhenRunning value="True" />
+    <ZoomLevel value="0" />
+    <LayoutType>Horizontal</LayoutType>
+    <MetaInfo>
+      <NameIsFileName value="True" />
+      <Name>Workflow #3</Name>
+      <Description />
+      <RootToolName />
+      <ToolVersion />
+      <ToolInDb value="False" />
+      <CategoryName />
+      <SearchTags />
+      <Author />
+      <Company />
+      <Copyright />
+      <DescriptionLink actual="" displayed="" />
+      <Example>
+        <Description />
+        <File />
+      </Example>
+      <WorkflowId value="29317a42-98bb-49f7-8cea-b3301340e07a" />
+      <Telemetry>
+        <PreviousWorkflowId value="6ed2a4c0-a442-4f28-9894-029addd8e1c5" />
+        <OriginWorkflowId value="6ed2a4c0-a442-4f28-9894-029addd8e1c5" />
+      </Telemetry>
+    </MetaInfo>
+    <Events>
+      <Enabled value="True" />
+    </Events>
+  </Properties>
+</AlteryxDocument>

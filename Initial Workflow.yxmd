@@ -1,0 +1,1263 @@
+<?xml version="1.0"?>
+<AlteryxDocument yxmdVer="2021.3">
+  <Nodes>
+    <Node ToolID="16">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
+        <Position x="54" y="234" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Passwords />
+          <File RecordLimit="" SearchSubDirs="False" FileFormat="0" OutputFileName="">..\Datasets\Virginia_Labor_Force_and_Unemployment_estimates_by_Month_by_County.csv</File>
+          <FormatSpecificOptions>
+            <HeaderRow>True</HeaderRow>
+            <IgnoreErrors>False</IgnoreErrors>
+            <AllowShareWrite>False</AllowShareWrite>
+            <ImportLine>1</ImportLine>
+            <FieldLen>254</FieldLen>
+            <SingleThreadRead>False</SingleThreadRead>
+            <IgnoreQuotes>DoubleQuotes</IgnoreQuotes>
+            <Delimeter>,</Delimeter>
+            <QuoteRecordBreak>False</QuoteRecordBreak>
+            <CodePage>28591</CodePage>
+          </FormatSpecificOptions>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <AnnotationText>Read VA Unemployment Data.</AnnotationText>
+          <DefaultAnnotationText>Virginia_Labor_Force_and_Unemployment_estimates_by_Month_by_County.csv</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="SurveyCode" size="254" source="File: C:\Users\Fares\Desktop\MSBA\DB Mgmt\Final\Datasets\Virginia_Labor_Force_and_Unemployment_estimates_by_Month_by_County.csv" type="V_WString" />
+            <Field name="SeasonalCode" size="254" source="File: C:\Users\Fares\Desktop\MSBA\DB Mgmt\Final\Datasets\Virginia_Labor_Force_and_Unemployment_estimates_by_Month_by_County.csv" type="V_WString" />
+            <Field name="AreaCode" size="254" source="File: C:\Users\Fares\Desktop\MSBA\DB Mgmt\Final\Datasets\Virginia_Labor_Force_and_Unemployment_estimates_by_Month_by_County.csv" type="V_WString" />
+            <Field name="StateCode" size="254" source="File: C:\Users\Fares\Desktop\MSBA\DB Mgmt\Final\Datasets\Virginia_Labor_Force_and_Unemployment_estimates_by_Month_by_County.csv" type="V_WString" />
+            <Field name="CountyCode" size="254" source="File: C:\Users\Fares\Desktop\MSBA\DB Mgmt\Final\Datasets\Virginia_Labor_Force_and_Unemployment_estimates_by_Month_by_County.csv" type="V_WString" />
+            <Field name="Year" size="254" source="File: C:\Users\Fares\Desktop\MSBA\DB Mgmt\Final\Datasets\Virginia_Labor_Force_and_Unemployment_estimates_by_Month_by_County.csv" type="V_WString" />
+            <Field name="Period" size="254" source="File: C:\Users\Fares\Desktop\MSBA\DB Mgmt\Final\Datasets\Virginia_Labor_Force_and_Unemployment_estimates_by_Month_by_County.csv" type="V_WString" />
+            <Field name="LaborForce" size="254" source="File: C:\Users\Fares\Desktop\MSBA\DB Mgmt\Final\Datasets\Virginia_Labor_Force_and_Unemployment_estimates_by_Month_by_County.csv" type="V_WString" />
+            <Field name="Employment" size="254" source="File: C:\Users\Fares\Desktop\MSBA\DB Mgmt\Final\Datasets\Virginia_Labor_Force_and_Unemployment_estimates_by_Month_by_County.csv" type="V_WString" />
+            <Field name="Unemployment" size="254" source="File: C:\Users\Fares\Desktop\MSBA\DB Mgmt\Final\Datasets\Virginia_Labor_Force_and_Unemployment_estimates_by_Month_by_County.csv" type="V_WString" />
+            <Field name="UnemploymentRate" size="254" source="File: C:\Users\Fares\Desktop\MSBA\DB Mgmt\Final\Datasets\Virginia_Labor_Force_and_Unemployment_estimates_by_Month_by_County.csv" type="V_WString" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileInput" />
+    </Node>
+    <Node ToolID="17">
+      <GuiSettings>
+        <Position x="186" y="234" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Value name="Check Box (135)">False</Value>
+          <Value name="Check Box (136)">False</Value>
+          <Value name="List Box (11)">"LaborForce","Employment","Unemployment"</Value>
+          <Value name="Check Box (84)">True</Value>
+          <Value name="Check Box (117)">True</Value>
+          <Value name="Check Box (15)">True</Value>
+          <Value name="Check Box (109)">False</Value>
+          <Value name="Check Box (122)">False</Value>
+          <Value name="Check Box (53)">False</Value>
+          <Value name="Check Box (58)">False</Value>
+          <Value name="Check Box (70)">True</Value>
+          <Value name="Check Box (77)">False</Value>
+          <Value name="Drop Down (81)">upper</Value>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings Macro="Cleanse.yxmc" />
+    </Node>
+    <Node ToolID="18">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="354" y="234" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="False" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="SurveyCode" selected="False" />
+            <SelectField field="SeasonalCode" selected="False" />
+            <SelectField field="AreaCode" selected="False" />
+            <SelectField field="StateCode" selected="False" />
+            <SelectField field="LaborForce" selected="True" type="Int32" size="4" />
+            <SelectField field="Employment" selected="True" rename="Employed" type="Int32" size="4" />
+            <SelectField field="Unemployment" selected="True" rename="Unemployed" type="Int32" size="4" />
+            <SelectField field="UnemploymentRate" selected="True" type="FixedDecimal" size="10.2" />
+            <SelectField field="*Unknown" selected="True" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="26">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
+        <Position x="54" y="378" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Passwords />
+          <File RecordLimit="" SearchSubDirs="False" FileFormat="0" OutputFileName="">..\Datasets\Virginia_SNAP_Participation_and_Expenditures_2012-2021.csv</File>
+          <FormatSpecificOptions>
+            <HeaderRow>True</HeaderRow>
+            <IgnoreErrors>False</IgnoreErrors>
+            <AllowShareWrite>False</AllowShareWrite>
+            <ImportLine>1</ImportLine>
+            <FieldLen>254</FieldLen>
+            <SingleThreadRead>False</SingleThreadRead>
+            <IgnoreQuotes>DoubleQuotes</IgnoreQuotes>
+            <Delimeter>,</Delimeter>
+            <QuoteRecordBreak>False</QuoteRecordBreak>
+            <CodePage>28591</CodePage>
+          </FormatSpecificOptions>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <AnnotationText>SNAP Participating Data, 2012-2021.</AnnotationText>
+          <DefaultAnnotationText>Virginia_SNAP_Participation_and_Expenditures_2012-2021.csv</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Region" size="254" source="File: C:\Users\Fares\Desktop\MSBA\DB Mgmt\Final\Datasets\Virginia_SNAP_Participation_and_Expenditures_2012-2021.csv" type="V_WString" />
+            <Field name="LOCALITY" size="254" source="File: C:\Users\Fares\Desktop\MSBA\DB Mgmt\Final\Datasets\Virginia_SNAP_Participation_and_Expenditures_2012-2021.csv" type="V_WString" />
+            <Field name="FIPS" size="254" source="File: C:\Users\Fares\Desktop\MSBA\DB Mgmt\Final\Datasets\Virginia_SNAP_Participation_and_Expenditures_2012-2021.csv" type="V_WString" />
+            <Field name="HOUSEHOLDS PA" size="254" source="File: C:\Users\Fares\Desktop\MSBA\DB Mgmt\Final\Datasets\Virginia_SNAP_Participation_and_Expenditures_2012-2021.csv" type="V_WString" />
+            <Field name="HOUSEHOLDS NPA" size="254" source="File: C:\Users\Fares\Desktop\MSBA\DB Mgmt\Final\Datasets\Virginia_SNAP_Participation_and_Expenditures_2012-2021.csv" type="V_WString" />
+            <Field name="HOUSEHOLDS TOTAL" size="254" source="File: C:\Users\Fares\Desktop\MSBA\DB Mgmt\Final\Datasets\Virginia_SNAP_Participation_and_Expenditures_2012-2021.csv" type="V_WString" />
+            <Field name="PERSONS PA" size="254" source="File: C:\Users\Fares\Desktop\MSBA\DB Mgmt\Final\Datasets\Virginia_SNAP_Participation_and_Expenditures_2012-2021.csv" type="V_WString" />
+            <Field name="PERSONS NPA" size="254" source="File: C:\Users\Fares\Desktop\MSBA\DB Mgmt\Final\Datasets\Virginia_SNAP_Participation_and_Expenditures_2012-2021.csv" type="V_WString" />
+            <Field name="PERSONS TOTAL" size="254" source="File: C:\Users\Fares\Desktop\MSBA\DB Mgmt\Final\Datasets\Virginia_SNAP_Participation_and_Expenditures_2012-2021.csv" type="V_WString" />
+            <Field name="ISSUANCE AMOUNT PA" size="254" source="File: C:\Users\Fares\Desktop\MSBA\DB Mgmt\Final\Datasets\Virginia_SNAP_Participation_and_Expenditures_2012-2021.csv" type="V_WString" />
+            <Field name="ISSUANCE AMOUNT NPA" size="254" source="File: C:\Users\Fares\Desktop\MSBA\DB Mgmt\Final\Datasets\Virginia_SNAP_Participation_and_Expenditures_2012-2021.csv" type="V_WString" />
+            <Field name="ISSUANCE AMOUNT TOTAL" size="254" source="File: C:\Users\Fares\Desktop\MSBA\DB Mgmt\Final\Datasets\Virginia_SNAP_Participation_and_Expenditures_2012-2021.csv" type="V_WString" />
+            <Field name="Year-Month" size="254" source="File: C:\Users\Fares\Desktop\MSBA\DB Mgmt\Final\Datasets\Virginia_SNAP_Participation_and_Expenditures_2012-2021.csv" type="V_WString" />
+            <Field name="PA Avg# Per Household" size="254" source="File: C:\Users\Fares\Desktop\MSBA\DB Mgmt\Final\Datasets\Virginia_SNAP_Participation_and_Expenditures_2012-2021.csv" type="V_WString" />
+            <Field name="NPA Avg# Per Household" size="254" source="File: C:\Users\Fares\Desktop\MSBA\DB Mgmt\Final\Datasets\Virginia_SNAP_Participation_and_Expenditures_2012-2021.csv" type="V_WString" />
+            <Field name="All SNAP Avg# Per Household" size="254" source="File: C:\Users\Fares\Desktop\MSBA\DB Mgmt\Final\Datasets\Virginia_SNAP_Participation_and_Expenditures_2012-2021.csv" type="V_WString" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileInput" />
+    </Node>
+    <Node ToolID="33">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.TextToColumns.TextToColumns">
+        <Position x="162" y="378" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Field>Year-Month</Field>
+          <ErrorHandling>Ignore</ErrorHandling>
+          <RootName>Year-Month</RootName>
+          <Delimeters value="/ " />
+          <NumFields value="3" />
+          <Flags value="0" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <AnnotationText>Split up Years and Months.</AnnotationText>
+          <DefaultAnnotationText>Split up Years and Months</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxTextToColumns" />
+    </Node>
+    <Node ToolID="34">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+        <Position x="282" y="378" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FormulaFields>
+            <FormulaField expression="IF [Year-Month1] = &quot;01&quot; THEN&#xA;  &quot;January&quot;&#xA;ELSEIF [Year-Month1] = &quot;02&quot; THEN&#xA;  &quot;February&quot;&#xA;ELSEIF [Year-Month1] = &quot;03&quot; THEN&#xA;  &quot;March&quot;&#xA;ELSEIF [Year-Month1] = &quot;04&quot; THEN&#xA;  &quot;April&quot;&#xA;ELSEIF [Year-Month1] = &quot;05&quot; THEN&#xA;  &quot;May&quot;&#xA;ELSEIF [Year-Month1] = &quot;06&quot; THEN&#xA;  &quot;June&quot;&#xA;ELSEIF [Year-Month1] = &quot;07&quot; THEN&#xA;  &quot;July&quot;&#xA;ELSEIF [Year-Month1] = &quot;08&quot; THEN&#xA;  &quot;August&quot;&#xA;ELSEIF [Year-Month1] = &quot;09&quot; THEN&#xA;  &quot;September&quot;&#xA;ELSEIF [Year-Month1] = &quot;10&quot; THEN&#xA;  &quot;October&quot;&#xA;ELSEIF [Year-Month1] = &quot;11&quot; THEN&#xA;  &quot;November&quot;&#xA;ELSEIF [Year-Month1] = &quot;12&quot; THEN&#xA;  &quot;December&quot;&#xA;ELSE&#xA;  &quot;N/A&quot;&#xA;ENDIF" field="Month Name" size="1073741823" type="V_WString" />
+          </FormulaFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <AnnotationText>Formula to create Month Names.</AnnotationText>
+          <DefaultAnnotationText>Month Name = IF [Year-Month1] = "01" THEN
+  "January"
+ELSEIF [Year-Month1] = "02...</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+    </Node>
+    <Node ToolID="35">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="510" y="378" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="True" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="Year-Month3" selected="True" rename="Year" />
+            <SelectField field="Year-Month1" selected="True" rename="Month" />
+            <SelectField field="Month Name" selected="True" />
+            <SelectField field="Region" selected="True" />
+            <SelectField field="LOCALITY" selected="True" />
+            <SelectField field="FIPS" selected="False" rename="CountyCode" />
+            <SelectField field="HOUSEHOLDS PA" selected="True" />
+            <SelectField field="HOUSEHOLDS NPA" selected="True" />
+            <SelectField field="HOUSEHOLDS TOTAL" selected="True" />
+            <SelectField field="PERSONS PA" selected="True" />
+            <SelectField field="PERSONS NPA" selected="True" />
+            <SelectField field="PERSONS TOTAL" selected="True" />
+            <SelectField field="ISSUANCE AMOUNT PA" selected="True" />
+            <SelectField field="ISSUANCE AMOUNT NPA" selected="True" />
+            <SelectField field="ISSUANCE AMOUNT TOTAL" selected="True" />
+            <SelectField field="Year-Month" selected="False" />
+            <SelectField field="PA Avg# Per Household" selected="True" />
+            <SelectField field="NPA Avg# Per Household" selected="True" />
+            <SelectField field="All SNAP Avg# Per Household" selected="True" />
+            <SelectField field="Year-Month2" selected="False" />
+            <SelectField field="Year" selected="False" />
+            <SelectField field="Month" selected="False" />
+            <SelectField field="*Unknown" selected="True" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <AnnotationText>Re-organize columns.</AnnotationText>
+          <DefaultAnnotationText>Re-organize columns.</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="36">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Sort.Sort">
+        <Position x="594" y="378" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <SortInfo locale="1033">
+            <Field field="Year" order="Ascending" />
+            <Field field="Month" order="Ascending" />
+          </SortInfo>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <AnnotationText>Sort by Year and Month.</AnnotationText>
+          <DefaultAnnotationText>Year - Ascending
+Month - Ascending</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSort" />
+    </Node>
+    <Node ToolID="39">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+        <Position x="402" y="378" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FormulaFields>
+            <FormulaField expression="Right([FIPS],Length([FIPS]) - 2)" field="FIPS" size="254" type="V_WString" />
+            <FormulaField expression="IIF([FIPS] = &quot;0&quot;,&quot;0&quot;,TrimLeft([FIPS],&quot;0&quot;))" field="FIPS" size="254" type="V_WString" />
+          </FormulaFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <AnnotationText>Delete leading state code "51" and leading zeros.</AnnotationText>
+          <DefaultAnnotationText>FIPS = Right([FIPS],Length([FIPS]) - 2)
+FIPS = IIF([FIPS] = "0","0",TrimLeft([FI...</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+    </Node>
+    <Node ToolID="40">
+      <GuiSettings>
+        <Position x="834" y="378" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Value name="Check Box (135)">False</Value>
+          <Value name="Check Box (136)">False</Value>
+          <Value name="List Box (11)">"HOUSEHOLDS PA","HOUSEHOLDS NPA","HOUSEHOLDS TOTAL","PERSONS PA","PERSONS NPA","PERSONS TOTAL","ISSUANCE AMOUNT PA","ISSUANCE AMOUNT NPA","ISSUANCE AMOUNT TOTAL","PA Avg# Per Household","NPA Avg# Per Household","All SNAP Avg# Per Household"</Value>
+          <Value name="Check Box (84)">True</Value>
+          <Value name="Check Box (117)">True</Value>
+          <Value name="Check Box (15)">True</Value>
+          <Value name="Check Box (109)">False</Value>
+          <Value name="Check Box (122)">False</Value>
+          <Value name="Check Box (53)">False</Value>
+          <Value name="Check Box (58)">False</Value>
+          <Value name="Check Box (70)">True</Value>
+          <Value name="Check Box (77)">False</Value>
+          <Value name="Drop Down (81)">upper</Value>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings Macro="Cleanse.yxmc" />
+    </Node>
+    <Node ToolID="41">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="918" y="378" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="False" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="HOUSEHOLDS PA" selected="True" type="Int32" size="4" />
+            <SelectField field="HOUSEHOLDS NPA" selected="True" type="Int32" size="4" />
+            <SelectField field="HOUSEHOLDS TOTAL" selected="True" type="Int32" size="4" />
+            <SelectField field="PERSONS PA" selected="True" type="Int32" size="4" />
+            <SelectField field="PERSONS NPA" selected="True" type="Int32" size="4" />
+            <SelectField field="PERSONS TOTAL" selected="True" type="Int32" size="4" />
+            <SelectField field="ISSUANCE AMOUNT PA" selected="True" type="Int32" size="4" />
+            <SelectField field="ISSUANCE AMOUNT NPA" selected="True" type="Int32" size="4" />
+            <SelectField field="ISSUANCE AMOUNT TOTAL" selected="True" type="Int32" size="4" />
+            <SelectField field="PA Avg# Per Household" selected="True" type="Int32" size="4" />
+            <SelectField field="NPA Avg# Per Household" selected="True" type="Int32" size="4" />
+            <SelectField field="All SNAP Avg# Per Household" selected="True" type="Int32" size="4" />
+            <SelectField field="*Unknown" selected="True" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="52">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+        <Position x="1002" y="378" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FormulaFields>
+            <FormulaField expression="IF [LOCALITY] = &quot;Accomack County&quot; THEN&#xA;  &quot;1&quot;&#xA;ELSEIF [LOCALITY] = &quot;Albemarle County&quot; THEN&#xA;  &quot;3&quot;&#xA;ELSEIF [LOCALITY] = &quot;Alleghany County&quot; THEN&#xA;  &quot;5&quot;&#xA;ELSEIF [LOCALITY] = &quot;Amelia County&quot; THEN&#xA;  &quot;7&quot;&#xA;ELSEIF [LOCALITY] = &quot;Amherst County&quot; THEN&#xA;  &quot;9&quot;&#xA;ELSEIF [LOCALITY] = &quot;Appomattox County&quot; THEN&#xA;  &quot;11&quot;&#xA;ELSEIF [LOCALITY] = &quot;Arlington County&quot; THEN&#xA;  &quot;13&quot;&#xA;ELSEIF [LOCALITY] = &quot;Augusta County&quot; THEN&#xA;  &quot;15&quot;&#xA;ELSEIF [LOCALITY] = &quot;Bath County&quot; THEN&#xA;  &quot;17&quot;&#xA;ELSEIF [LOCALITY] = &quot;Bedford County&quot; THEN&#xA;  &quot;19&quot;&#xA;ELSEIF [LOCALITY] = &quot;Bland County&quot; THEN&#xA;  &quot;21&quot;&#xA;ELSEIF [LOCALITY] = &quot;Botetourt County&quot; THEN&#xA;  &quot;23&quot;&#xA;ELSEIF [LOCALITY] = &quot;Brunswick County&quot; THEN&#xA;  &quot;25&quot;&#xA;ELSEIF [LOCALITY] = &quot;Buchanan County&quot; THEN&#xA;  &quot;27&quot;&#xA;ELSEIF [LOCALITY] = &quot;Buckingham County&quot; THEN&#xA;  &quot;29&quot;&#xA;ELSEIF [LOCALITY] = &quot;Campbell County&quot; THEN&#xA;  &quot;31&quot;&#xA;ELSEIF [LOCALITY] = &quot;Caroline County&quot; THEN&#xA;  &quot;33&quot;&#xA;ELSEIF [LOCALITY] = &quot;Carroll County&quot; THEN&#xA;  &quot;35&quot;&#xA;ELSEIF [LOCALITY] = &quot;Charles City County&quot; THEN&#xA;  &quot;36&quot;&#xA;ELSEIF [LOCALITY] = &quot;Charlotte County&quot; THEN&#xA;  &quot;37&quot;&#xA;ELSEIF [LOCALITY] = &quot;Chesterfield County&quot; THEN&#xA;  &quot;41&quot;&#xA;ELSEIF [LOCALITY] = &quot;Clarke County&quot; THEN&#xA;  &quot;43&quot;&#xA;ELSEIF [LOCALITY] = &quot;Craig County&quot; THEN&#xA;  &quot;45&quot;&#xA;ELSEIF [LOCALITY] = &quot;Culpeper County&quot; THEN&#xA;  &quot;47&quot;&#xA;ELSEIF [LOCALITY] = &quot;Cumberland County&quot; THEN&#xA;  &quot;49&quot;&#xA;ELSEIF [LOCALITY] = &quot;Dickenson County&quot; THEN&#xA;  &quot;51&quot;&#xA;ELSEIF [LOCALITY] = &quot;Dinwiddie County&quot; THEN&#xA;  &quot;53&quot;&#xA;ELSEIF [LOCALITY] = &quot;Essex County&quot; THEN&#xA;  &quot;57&quot;&#xA;ELSEIF [LOCALITY] = &quot;Fairfax County&quot; THEN&#xA;  &quot;59&quot;&#xA;ELSEIF [LOCALITY] = &quot;Fauquier County&quot; THEN&#xA;  &quot;61&quot;&#xA;ELSEIF [LOCALITY] = &quot;Floyd County&quot; THEN&#xA;  &quot;63&quot;&#xA;ELSEIF [LOCALITY] = &quot;Fluvanna County&quot; THEN&#xA;  &quot;65&quot;&#xA;ELSEIF [LOCALITY] = &quot;Franklin County&quot; THEN&#xA;  &quot;67&quot;&#xA;ELSEIF [LOCALITY] = &quot;Frederick County&quot; THEN&#xA;  &quot;69&quot;&#xA;ELSEIF [LOCALITY] = &quot;Giles County&quot; THEN&#xA;  &quot;71&quot;&#xA;ELSEIF [LOCALITY] = &quot;Gloucester County&quot; THEN&#xA;  &quot;73&quot;&#xA;ELSEIF [LOCALITY] = &quot;Goochland County&quot; THEN&#xA;  &quot;75&quot;&#xA;ELSEIF [LOCALITY] = &quot;Grayson County&quot; THEN&#xA;  &quot;77&quot;&#xA;ELSEIF [LOCALITY] = &quot;Greene County&quot; THEN&#xA;  &quot;79&quot;&#xA;ELSEIF [LOCALITY] = &quot;Greensville County&quot; THEN&#xA;  &quot;81&quot;&#xA;ELSEIF [LOCALITY] = &quot;Halifax County&quot; THEN&#xA;  &quot;83&quot;&#xA;ELSEIF [LOCALITY] = &quot;Hanover County&quot; THEN&#xA;  &quot;85&quot;&#xA;ELSEIF [LOCALITY] = &quot;Henrico County&quot; THEN&#xA;  &quot;87&quot;&#xA;ELSEIF [LOCALITY] = &quot;Henry County&quot; THEN&#xA;  &quot;89&quot;&#xA;ELSEIF [LOCALITY] = &quot;Highland County&quot; THEN&#xA;  &quot;91&quot;&#xA;ELSEIF [LOCALITY] = &quot;Isle Of Wight County&quot; OR &quot;Isle of Wight County&quot; THEN&#xA;  &quot;93&quot;&#xA;ELSEIF [LOCALITY] = &quot;James City County&quot; THEN&#xA;  &quot;95&quot;&#xA;ELSEIF [LOCALITY] = &quot;King and Queen County&quot; THEN&#xA;  &quot;97&quot;&#xA;ELSEIF [LOCALITY] = &quot;King George County&quot; THEN&#xA;  &quot;99&quot;&#xA;ELSEIF [LOCALITY] = &quot;King William County&quot; THEN&#xA;  &quot;101&quot;&#xA;ELSEIF [LOCALITY] = &quot;Lancaster County&quot; THEN&#xA;  &quot;103&quot;&#xA;ELSEIF [LOCALITY] = &quot;Lee County&quot; THEN&#xA;  &quot;105&quot;&#xA;ELSEIF [LOCALITY] = &quot;Loudoun County&quot; THEN&#xA;  &quot;107&quot;&#xA;ELSEIF [LOCALITY] = &quot;Louisa County&quot; THEN&#xA;  &quot;109&quot;&#xA;ELSEIF [LOCALITY] = &quot;Lunenburg County&quot; THEN&#xA;  &quot;111&quot;&#xA;ELSEIF [LOCALITY] = &quot;Madison County&quot; THEN&#xA;  &quot;113&quot;&#xA;ELSEIF [LOCALITY] = &quot;Mathews County&quot; THEN&#xA;  &quot;115&quot;&#xA;ELSEIF [LOCALITY] = &quot;Mecklenburg County&quot; THEN&#xA;  &quot;117&quot;&#xA;ELSEIF [LOCALITY] = &quot;Middlesex County&quot; THEN&#xA;  &quot;119&quot;&#xA;ELSEIF [LOCALITY] = &quot;Montgomery County&quot; THEN&#xA;  &quot;121&quot;&#xA;ELSEIF [LOCALITY] = &quot;Nelson County&quot; THEN&#xA;  &quot;125&quot;&#xA;ELSEIF [LOCALITY] = &quot;New Kent County&quot; THEN&#xA;  &quot;127&quot;&#xA;ELSEIF [LOCALITY] = &quot;Northampton County&quot; THEN&#xA;  &quot;131&quot;&#xA;ELSEIF [LOCALITY] = &quot;Northumberland County&quot; THEN&#xA;  &quot;133&quot;&#xA;ELSEIF [LOCALITY] = &quot;Nottoway County&quot; THEN&#xA;  &quot;135&quot;&#xA;ELSEIF [LOCALITY] = &quot;Orange County&quot; THEN&#xA;  &quot;137&quot;&#xA;ELSEIF [LOCALITY] = &quot;Page County&quot; THEN&#xA;  &quot;139&quot;&#xA;ELSEIF [LOCALITY] = &quot;Patrick County&quot; THEN&#xA;  &quot;141&quot;&#xA;ELSEIF [LOCALITY] = &quot;Pittsylvania County&quot; THEN&#xA;  &quot;143&quot;&#xA;ELSEIF [LOCALITY] = &quot;Powhatan County&quot; THEN&#xA;  &quot;145&quot;&#xA;ELSEIF [LOCALITY] = &quot;Prince Edward County&quot; THEN&#xA;  &quot;147&quot;&#xA;ELSEIF [LOCALITY] = &quot;Prince George County&quot; THEN&#xA;  &quot;149&quot;&#xA;ELSEIF [LOCALITY] = &quot;Prince William County&quot; THEN&#xA;  &quot;153&quot;&#xA;ELSEIF [LOCALITY] = &quot;Pulaski County&quot; THEN&#xA;  &quot;155&quot;&#xA;ELSEIF [LOCALITY] = &quot;Rappahannock County&quot; THEN&#xA;  &quot;157&quot;&#xA;ELSEIF [LOCALITY] = &quot;Richmond County&quot; THEN&#xA;  &quot;159&quot;&#xA;ELSEIF [LOCALITY] = &quot;Roanoke County&quot; THEN&#xA;  &quot;161&quot;&#xA;ELSEIF [LOCALITY] = &quot;Rockbridge County&quot; THEN&#xA;  &quot;163&quot;&#xA;ELSEIF [LOCALITY] = &quot;Rockingham County&quot; THEN&#xA;  &quot;165&quot;&#xA;ELSEIF [LOCALITY] = &quot;Russell County&quot; THEN&#xA;  &quot;167&quot;&#xA;ELSEIF [LOCALITY] = &quot;Scott County&quot; THEN&#xA;  &quot;169&quot;&#xA;ELSEIF [LOCALITY] = &quot;Shenandoah County&quot; THEN&#xA;  &quot;171&quot;&#xA;ELSEIF [LOCALITY] = &quot;Smyth County&quot; THEN&#xA;  &quot;173&quot;&#xA;ELSEIF [LOCALITY] = &quot;Southampton County&quot; THEN&#xA;  &quot;175&quot;&#xA;ELSEIF [LOCALITY] = &quot;Spotsylvania County&quot; THEN&#xA;  &quot;177&quot;&#xA;ELSEIF [LOCALITY] = &quot;Stafford County&quot; THEN&#xA;  &quot;179&quot;&#xA;ELSEIF [LOCALITY] = &quot;Surry County&quot; THEN&#xA;  &quot;181&quot;&#xA;ELSEIF [LOCALITY] = &quot;Sussex County&quot; THEN&#xA;  &quot;183&quot;&#xA;ELSEIF [LOCALITY] = &quot;Tazewell County&quot; THEN&#xA;  &quot;185&quot;&#xA;ELSEIF [LOCALITY] = &quot;Warren County&quot; THEN&#xA;  &quot;187&quot;&#xA;ELSEIF [LOCALITY] = &quot;Washington County&quot; THEN&#xA;  &quot;191&quot;&#xA;ELSEIF [LOCALITY] = &quot;Westmoreland County&quot; THEN&#xA;  &quot;193&quot;&#xA;ELSEIF [LOCALITY] = &quot;Wise County&quot; THEN&#xA;  &quot;195&quot;&#xA;ELSEIF [LOCALITY] = &quot;Wythe County&quot; THEN&#xA;  &quot;197&quot;&#xA;ELSEIF [LOCALITY] = &quot;York County&quot; THEN&#xA;  &quot;199&quot;&#xA;ELSEIF [LOCALITY] = &quot;Alexandria City&quot; THEN&#xA;  &quot;510&quot;&#xA;ELSEIF [LOCALITY] = &quot;Bristol City&quot; THEN&#xA;  &quot;520&quot;&#xA;ELSEIF [LOCALITY] = &quot;Buena Vista City&quot; THEN&#xA;  &quot;530&quot;&#xA;ELSEIF [LOCALITY] = &quot;Charlottesville City&quot; THEN&#xA;  &quot;540&quot;&#xA;ELSEIF [LOCALITY] = &quot;Chesapeake City&quot; THEN&#xA;  &quot;550&quot;&#xA;ELSEIF [LOCALITY] = &quot;Colonial Heights City&quot; THEN&#xA;  &quot;570&quot;&#xA;ELSEIF [LOCALITY] = &quot;Covington City&quot; THEN&#xA;  &quot;580&quot;&#xA;ELSEIF [LOCALITY] = &quot;Danville City&quot; THEN&#xA;  &quot;590&quot;&#xA;ELSEIF [LOCALITY] = &quot;Emporia City&quot; THEN&#xA;  &quot;595&quot;&#xA;ELSEIF [LOCALITY] = &quot;Fairfax City&quot; THEN&#xA;  &quot;600&quot;&#xA;ELSEIF [LOCALITY] = &quot;Falls Church City&quot;  THEN&#xA;  &quot;610&quot;&#xA;ELSEIF [LOCALITY] = &quot;Falls Church&quot; THEN&#xA;	&quot;610&quot;&#xA;ELSEIF [LOCALITY] = &quot;Franklin City&quot; THEN&#xA;  &quot;620&quot;&#xA;ELSEIF [LOCALITY] = &quot;Fredericksburg City&quot; THEN&#xA;  &quot;630&quot;&#xA;ELSEIF [LOCALITY] = &quot;Galax City&quot; THEN&#xA;  &quot;640&quot;&#xA;ELSEIF [LOCALITY] = &quot;Hampton City&quot; THEN&#xA;  &quot;650&quot;&#xA;ELSEIF [LOCALITY] = &quot;Harrisonburg City&quot; THEN&#xA;  &quot;660&quot;&#xA;ELSEIF [LOCALITY] = &quot;Hopewell City&quot; THEN&#xA;  &quot;670&quot;&#xA;ELSEIF [LOCALITY] = &quot;Lexington City&quot; THEN&#xA;  &quot;678&quot;&#xA;ELSEIF [LOCALITY] = &quot;Lynchburg City&quot; THEN&#xA;  &quot;680&quot;&#xA;ELSEIF [LOCALITY] = &quot;Manassas City&quot; THEN&#xA;  &quot;683&quot;&#xA;ELSEIF [LOCALITY] = &quot;Manassas Park City&quot; THEN&#xA;  &quot;685&quot;&#xA;ELSEIF [LOCALITY] = &quot;Martinsville City&quot; THEN&#xA;  &quot;690&quot;&#xA;ELSEIF [LOCALITY] = &quot;Newport News City&quot; THEN&#xA;  &quot;700&quot;&#xA;ELSEIF [LOCALITY] = &quot;Norfolk City&quot; THEN&#xA;  &quot;710&quot;&#xA;ELSEIF [LOCALITY] = &quot;Norton City&quot; THEN&#xA;  &quot;720&quot;&#xA;ELSEIF [LOCALITY] = &quot;Petersburg City&quot; THEN&#xA;  &quot;730&quot;&#xA;ELSEIF [LOCALITY] = &quot;Poquoson City&quot; THEN&#xA;  &quot;735&quot;&#xA;ELSEIF [LOCALITY] = &quot;Portsmouth City&quot; THEN&#xA;  &quot;740&quot;&#xA;ELSEIF [LOCALITY] = &quot;Radford City&quot; THEN&#xA;  &quot;750&quot;&#xA;ELSEIF [LOCALITY] = &quot;Richmond City&quot; THEN&#xA;  &quot;760&quot;&#xA;ELSEIF [LOCALITY] = &quot;Roanoke City&quot; THEN&#xA;  &quot;770&quot;&#xA;ELSEIF [LOCALITY] = &quot;Salem City&quot; THEN&#xA;  &quot;775&quot;&#xA;ELSEIF [LOCALITY] = &quot;Staunton City&quot; THEN&#xA;  &quot;790&quot;&#xA;ELSEIF [LOCALITY] = &quot;Suffolk City&quot; THEN&#xA;  &quot;800&quot;&#xA;ELSEIF [LOCALITY] = &quot;Virginia Beach City&quot; THEN&#xA;  &quot;810&quot;&#xA;ELSEIF [LOCALITY] = &quot;Waynesboro City&quot; THEN&#xA;  &quot;820&quot;&#xA;ELSEIF [LOCALITY] = &quot;Williamsburg City&quot; THEN&#xA;  &quot;830&quot;&#xA;ELSEIF [LOCALITY] = &quot;Winchester City&quot; THEN&#xA;  &quot;840&quot;&#xA;ELSE&#xA;  NULL()&#xA;ENDIF" field="County Code" size="20" type="V_WString" />
+          </FormulaFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <AnnotationText>Assign County Names their respective County Code.</AnnotationText>
+          <DefaultAnnotationText>County Code = IF [LOCALITY] = "Accomack County" THEN
+  "1"
+ELSEIF [LOCALITY] = "...</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+    </Node>
+    <Node ToolID="53">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="1326" y="378" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="True" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="Year" selected="True" />
+            <SelectField field="Month" selected="True" />
+            <SelectField field="Month Name" selected="True" />
+            <SelectField field="Region" selected="True" />
+            <SelectField field="County Code" selected="True" />
+            <SelectField field="LOCALITY" selected="True" />
+            <SelectField field="HOUSEHOLDS PA" selected="True" />
+            <SelectField field="HOUSEHOLDS NPA" selected="True" />
+            <SelectField field="HOUSEHOLDS TOTAL" selected="True" />
+            <SelectField field="PERSONS PA" selected="True" />
+            <SelectField field="PERSONS NPA" selected="True" />
+            <SelectField field="PERSONS TOTAL" selected="True" />
+            <SelectField field="ISSUANCE AMOUNT PA" selected="True" />
+            <SelectField field="ISSUANCE AMOUNT NPA" selected="True" />
+            <SelectField field="ISSUANCE AMOUNT TOTAL" selected="True" />
+            <SelectField field="PA Avg# Per Household" selected="True" />
+            <SelectField field="NPA Avg# Per Household" selected="True" />
+            <SelectField field="All SNAP Avg# Per Household" selected="True" />
+            <SelectField field="*Unknown" selected="True" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="58">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
+        <Position x="714" y="378" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Expression><![CDATA[[Year] >= "2013" AND [Year] <= "2019"
+]]></Expression>
+          <Mode>Custom</Mode>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <AnnotationText>Select years between 2013-2019.</AnnotationText>
+          <DefaultAnnotationText><![CDATA[[Year] >= "2013" AND [Year] <= "2019"
+]]></DefaultAnnotationText>
+          <Left value="True" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFilter" />
+    </Node>
+    <Node ToolID="59">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
+        <Position x="486" y="234" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Expression>[Period] != "M13" AND [Year] &gt;= "2013" AND [Year] &lt;= "2019"</Expression>
+          <Mode>Custom</Mode>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>[Period] != "M13" AND [Year] &gt;= "2013" AND [Year] &lt;= "2019"</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFilter" />
+    </Node>
+    <Node ToolID="60">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
+        <Position x="1122" y="378" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Mode>Simple</Mode>
+          <Simple>
+            <Operator>IsNull</Operator>
+            <Field>County Code</Field>
+            <Operands>
+              <IgnoreTimeInDateTime>True</IgnoreTimeInDateTime>
+              <DateType>fixed</DateType>
+              <PeriodDate>2021-12-12 13:25:19</PeriodDate>
+              <PeriodType>
+              </PeriodType>
+              <PeriodCount>0</PeriodCount>
+              <Operand>
+              </Operand>
+              <StartDate>2021-12-12 13:25:19</StartDate>
+              <EndDate>2021-12-12 13:25:19</EndDate>
+            </Operands>
+          </Simple>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <AnnotationText>Remove Null county codes.</AnnotationText>
+          <DefaultAnnotationText>IsNull([County Code])</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFilter" />
+    </Node>
+    <Node ToolID="62">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Join.Join">
+        <Position x="1542" y="246" />
+      </GuiSettings>
+      <Properties>
+        <Configuration joinByRecordPos="False">
+          <JoinInfo connection="Left">
+            <Field field="Period" />
+            <Field field="Year" />
+            <Field field="CountyCode" />
+          </JoinInfo>
+          <JoinInfo connection="Right">
+            <Field field="Period" />
+            <Field field="Year" />
+            <Field field="County Code" />
+          </JoinInfo>
+          <SelectConfiguration>
+            <Configuration outputConnection="Join">
+              <OrderChanged value="True" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="Left_CountyCode" selected="True" input="Left_" />
+                <SelectField field="Right_LOCALITY" selected="True" input="Right_" />
+                <SelectField field="Right_Region" selected="True" input="Right_" />
+                <SelectField field="Left_Year" selected="True" input="Left_" />
+                <SelectField field="Left_Period" selected="False" input="Left_" />
+                <SelectField field="Right_Month" selected="True" input="Right_" />
+                <SelectField field="Right_Month Name" selected="True" input="Right_" />
+                <SelectField field="Right_Period" selected="False" rename="Right_Period" input="Right_" />
+                <SelectField field="Left_Employed" selected="True" input="Left_" />
+                <SelectField field="Left_Unemployed" selected="True" input="Left_" />
+                <SelectField field="Left_UnemploymentRate" selected="True" input="Left_" />
+                <SelectField field="Right_Year" selected="False" rename="Right_Year" input="Right_" />
+                <SelectField field="Right_County Code" selected="False" input="Right_" />
+                <SelectField field="Left_LaborForce" selected="True" input="Left_" />
+                <SelectField field="Right_HOUSEHOLDS PA" selected="True" input="Right_" />
+                <SelectField field="Right_HOUSEHOLDS NPA" selected="True" input="Right_" />
+                <SelectField field="Right_HOUSEHOLDS TOTAL" selected="True" input="Right_" />
+                <SelectField field="Right_PERSONS PA" selected="True" input="Right_" />
+                <SelectField field="Right_PERSONS NPA" selected="True" input="Right_" />
+                <SelectField field="Right_PERSONS TOTAL" selected="True" input="Right_" />
+                <SelectField field="Right_ISSUANCE AMOUNT PA" selected="True" input="Right_" />
+                <SelectField field="Right_ISSUANCE AMOUNT NPA" selected="True" input="Right_" />
+                <SelectField field="Right_ISSUANCE AMOUNT TOTAL" selected="True" input="Right_" />
+                <SelectField field="Right_PA Avg# Per Household" selected="True" input="Right_" />
+                <SelectField field="Right_NPA Avg# Per Household" selected="True" input="Right_" />
+                <SelectField field="Right_All SNAP Avg# Per Household" selected="True" input="Right_" />
+                <SelectField field="*Unknown" selected="True" />
+              </SelectFields>
+            </Configuration>
+          </SelectConfiguration>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxJoin" />
+    </Node>
+    <Node ToolID="72">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
+        <Position x="990" y="222" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Mode>Simple</Mode>
+          <Simple>
+            <Operator>=</Operator>
+            <Field>CountyCode</Field>
+            <Operands>
+              <IgnoreTimeInDateTime>True</IgnoreTimeInDateTime>
+              <DateType>fixed</DateType>
+              <PeriodDate>2021-12-12 14:15:09</PeriodDate>
+              <PeriodType>
+              </PeriodType>
+              <PeriodCount>0</PeriodCount>
+              <Operand>775</Operand>
+              <StartDate>2021-12-12 14:15:09</StartDate>
+              <EndDate>2021-12-12 14:15:09</EndDate>
+            </Operands>
+          </Simple>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <AnnotationText>Filter out Bedford City due to incomplete information.</AnnotationText>
+          <DefaultAnnotationText>[CountyCode] = "775"</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFilter" />
+    </Node>
+    <Node ToolID="73">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
+        <Position x="1218" y="390" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Mode>Simple</Mode>
+          <Simple>
+            <Operator>!=</Operator>
+            <Field>County Code</Field>
+            <Operands>
+              <IgnoreTimeInDateTime>True</IgnoreTimeInDateTime>
+              <DateType>fixed</DateType>
+              <PeriodDate>2021-12-12 14:19:27</PeriodDate>
+              <PeriodType>
+              </PeriodType>
+              <PeriodCount>0</PeriodCount>
+              <StartDate>2021-12-12 14:19:27</StartDate>
+              <EndDate>2021-12-12 14:19:27</EndDate>
+              <Operand>775</Operand>
+            </Operands>
+          </Simple>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <AnnotationText>Filter Out Salem County due to incomplete data.</AnnotationText>
+          <DefaultAnnotationText>[County Code] != "775"</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFilter" />
+    </Node>
+    <Node ToolID="74">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+        <Position x="1422" y="378" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FormulaFields>
+            <FormulaField expression="IF [Month] = &quot;01&quot; THEN&#xA;  &quot;M01&quot;&#xA;ELSEIF [Month] = &quot;02&quot; THEN&#xA;  &quot;M02&quot;&#xA;ELSEIF [Month] = &quot;03&quot; THEN&#xA;  &quot;M03&quot;&#xA;ELSEIF [Month] = &quot;04&quot; THEN&#xA;  &quot;M04&quot;&#xA;ELSEIF [Month] = &quot;05&quot; THEN&#xA;  &quot;M05&quot;&#xA;ELSEIF [Month] = &quot;06&quot; THEN&#xA;  &quot;M06&quot;&#xA;ELSEIF [Month] = &quot;07&quot; THEN&#xA;  &quot;M07&quot;&#xA;ELSEIF [Month] = &quot;08&quot; THEN&#xA;  &quot;M08&quot;&#xA;ELSEIF [Month] = &quot;09&quot; THEN&#xA;  &quot;M09&quot;&#xA;ELSEIF [Month] = &quot;10&quot; THEN&#xA;  &quot;M10&quot;&#xA;ELSEIF [Month] = &quot;11&quot; THEN&#xA;	&quot;M11&quot;&#xA;ELSE &quot;M12&quot;&#xA;ENDIF" field="Period" size="1073741823" type="V_WString" />
+          </FormulaFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <AnnotationText>Assign Period Number to corresponding Month.</AnnotationText>
+          <DefaultAnnotationText>Period = IF [Month] = "01" THEN
+  "M01"
+ELSEIF [Month] = "02" THEN
+  "M02"
+ELSEI...</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+    </Node>
+    <Node ToolID="78">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+        <Position x="1626" y="246" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FormulaFields>
+            <FormulaField expression="IF [Month] = &quot;01&quot; OR [Month] = &quot;02&quot; OR [Month] = &quot;03&quot;&#xA;THEN &quot;Q1&quot;&#xA;&#xA;ELSEIF [Month] = &quot;04&quot; OR [Month] = &quot;05&quot; OR [Month] = &quot;06&quot;&#xA;THEN &quot;Q2&quot;&#xA;&#xA;ELSEIF [Month] = &quot;07&quot; OR [Month] = &quot;08&quot; OR [Month] = &quot;09&quot;&#xA;THEN &quot;Q3&quot;&#xA;&#xA;ELSE &quot;Q4&quot;&#xA;&#xA;ENDIF" field="Quarter" size="1073741823" type="V_WString" />
+          </FormulaFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <AnnotationText>Create Quarter periods.</AnnotationText>
+          <DefaultAnnotationText>Quarter = IF [Month] = "01" OR [Month] = "02" OR [Month] = "03"
+THEN "Q1"
+
+ELSEI...</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+    </Node>
+    <Node ToolID="85">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.RecordID.RecordID">
+        <Position x="1770" y="150" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FieldName>DateKey</FieldName>
+          <StartValue>1</StartValue>
+          <FieldType>Int32</FieldType>
+          <FieldSize>6</FieldSize>
+          <Position>0</Position>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <AnnotationText>Creating Date Dimension.</AnnotationText>
+          <DefaultAnnotationText>Creating Date Dimension.</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxRecordID" />
+    </Node>
+    <Node ToolID="86">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="1866" y="150" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="True" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="DateKey" selected="True" />
+            <SelectField field="CountyCode" selected="False" />
+            <SelectField field="LOCALITY" selected="False" />
+            <SelectField field="Year" selected="True" />
+            <SelectField field="Month" selected="True" />
+            <SelectField field="Month Name" selected="True" />
+            <SelectField field="Quarter" selected="True" />
+            <SelectField field="Employed" selected="False" />
+            <SelectField field="Unemployed" selected="False" />
+            <SelectField field="UnemploymentRate" selected="False" />
+            <SelectField field="LaborForce" selected="False" />
+            <SelectField field="HOUSEHOLDS PA" selected="False" />
+            <SelectField field="HOUSEHOLDS NPA" selected="False" />
+            <SelectField field="HOUSEHOLDS TOTAL" selected="False" />
+            <SelectField field="PERSONS PA" selected="False" />
+            <SelectField field="PERSONS NPA" selected="False" />
+            <SelectField field="PERSONS TOTAL" selected="False" />
+            <SelectField field="ISSUANCE AMOUNT PA" selected="False" />
+            <SelectField field="ISSUANCE AMOUNT NPA" selected="False" />
+            <SelectField field="ISSUANCE AMOUNT TOTAL" selected="False" />
+            <SelectField field="PA Avg# Per Household" selected="False" />
+            <SelectField field="NPA Avg# Per Household" selected="False" />
+            <SelectField field="All SNAP Avg# Per Household" selected="False" />
+            <SelectField field="Region" selected="False" />
+            <SelectField field="*Unknown" selected="False" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="87">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.RecordID.RecordID">
+        <Position x="1770" y="246" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FieldName>EmploymentKey</FieldName>
+          <StartValue>1</StartValue>
+          <FieldType>Int32</FieldType>
+          <FieldSize>6</FieldSize>
+          <Position>0</Position>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <AnnotationText>Creating Employment Key.</AnnotationText>
+          <DefaultAnnotationText>Creating Employment Key.</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxRecordID" />
+    </Node>
+    <Node ToolID="88">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="1866" y="246" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="True" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="EmploymentKey" selected="True" />
+            <SelectField field="CountyCode" selected="False" />
+            <SelectField field="LOCALITY" selected="False" />
+            <SelectField field="Year" selected="False" />
+            <SelectField field="Month" selected="False" />
+            <SelectField field="Month Name" selected="False" />
+            <SelectField field="LaborForce" selected="True" />
+            <SelectField field="Employed" selected="True" />
+            <SelectField field="Unemployed" selected="True" />
+            <SelectField field="UnemploymentRate" selected="False" />
+            <SelectField field="HOUSEHOLDS PA" selected="False" />
+            <SelectField field="HOUSEHOLDS NPA" selected="False" />
+            <SelectField field="HOUSEHOLDS TOTAL" selected="False" />
+            <SelectField field="PERSONS PA" selected="False" />
+            <SelectField field="PERSONS NPA" selected="False" />
+            <SelectField field="PERSONS TOTAL" selected="False" />
+            <SelectField field="ISSUANCE AMOUNT PA" selected="False" />
+            <SelectField field="ISSUANCE AMOUNT NPA" selected="False" />
+            <SelectField field="ISSUANCE AMOUNT TOTAL" selected="False" />
+            <SelectField field="PA Avg# Per Household" selected="False" />
+            <SelectField field="NPA Avg# Per Household" selected="False" />
+            <SelectField field="All SNAP Avg# Per Household" selected="False" />
+            <SelectField field="Quarter" selected="False" />
+            <SelectField field="Region" selected="False" />
+            <SelectField field="*Unknown" selected="False" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="89">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.RecordID.RecordID">
+        <Position x="1770" y="342" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FieldName>LocationKey</FieldName>
+          <StartValue>1</StartValue>
+          <FieldType>Int32</FieldType>
+          <FieldSize>6</FieldSize>
+          <Position>0</Position>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <AnnotationText>Creating Location Key.</AnnotationText>
+          <DefaultAnnotationText>Creating Location Key.</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxRecordID" />
+    </Node>
+    <Node ToolID="90">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="1866" y="342" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="False" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="LocationKey" selected="True" />
+            <SelectField field="CountyCode" selected="True" />
+            <SelectField field="LOCALITY" selected="True" />
+            <SelectField field="Region" selected="True" />
+            <SelectField field="*Unknown" selected="False" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="91">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.RecordID.RecordID">
+        <Position x="1770" y="438" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FieldName>HouseholdKey</FieldName>
+          <StartValue>1</StartValue>
+          <FieldType>Int32</FieldType>
+          <FieldSize>6</FieldSize>
+          <Position>0</Position>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <AnnotationText>Creating Household Key.</AnnotationText>
+          <DefaultAnnotationText>Creating Household Key.</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxRecordID" />
+    </Node>
+    <Node ToolID="92">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="1866" y="438" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="False" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="HouseholdKey" selected="True" />
+            <SelectField field="HOUSEHOLDS PA" selected="True" />
+            <SelectField field="HOUSEHOLDS NPA" selected="True" />
+            <SelectField field="PERSONS PA" selected="True" />
+            <SelectField field="PERSONS NPA" selected="True" />
+            <SelectField field="ISSUANCE AMOUNT PA" selected="True" />
+            <SelectField field="ISSUANCE AMOUNT NPA" selected="True" />
+            <SelectField field="*Unknown" selected="False" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="100">
+      <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
+        <Position x="1314" y="126" width="180" height="84" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Text>Delete the above write out to MySQL and do the new ones based off our big dataset.</Text>
+          <Font name="Arial" size="8.25" style="0" />
+          <TextColor name="Black" />
+          <FillColor name="White" />
+          <Shape shape="0" />
+          <Justification Justification="4" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+    </Node>
+    <Node ToolID="103">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="1638" y="54" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="False" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="Month Name" selected="False" />
+            <SelectField field="HOUSEHOLDS PA" selected="False" />
+            <SelectField field="HOUSEHOLDS NPA" selected="False" />
+            <SelectField field="PERSONS PA" selected="False" />
+            <SelectField field="PERSONS NPA" selected="False" />
+            <SelectField field="ISSUANCE AMOUNT PA" selected="False" />
+            <SelectField field="ISSUANCE AMOUNT NPA" selected="False" />
+            <SelectField field="PA Avg# Per Household" selected="False" />
+            <SelectField field="NPA Avg# Per Household" selected="False" />
+            <SelectField field="*Unknown" selected="True" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <AnnotationText>choose what we want.</AnnotationText>
+          <DefaultAnnotationText>choose what we want.</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="104">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileOutput.DbFileOutput">
+        <Position x="1758" y="54" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <File MaxRecords="" FileFormat="23">odbc:DSN=MySQL;UID=root;PWD=__EncPwd1__|||facttable</File>
+          <Passwords>49B64C1CFB3B9D77781C322DF</Passwords>
+          <FormatSpecificOptions>
+            <SpatialObjSize>8000</SpatialObjSize>
+            <TransactionSize>10000</TransactionSize>
+            <IgnoreDropTableSQLErrors>False</IgnoreDropTableSQLErrors>
+            <PostSQL />
+            <TableStyle>Quoted</TableStyle>
+            <PreSQL>USE dbfinalproject;
+DROP TABLE IF EXISTS facttable;</PreSQL>
+            <TransactionMessages>False</TransactionMessages>
+            <OutputOption>Create</OutputOption>
+          </FormatSpecificOptions>
+          <MultiFile value="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>DSN=MySQL
+Query=facttable</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileOutput" />
+    </Node>
+    <Node ToolID="105">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileOutput.DbFileOutput">
+        <Position x="1974" y="150" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <File MaxRecords="" FileFormat="23">odbc:DSN=MySQL;UID=root;PWD=__EncPwd1__|||dim_date</File>
+          <Passwords>49B64C1CFB3B9D77781C322DF</Passwords>
+          <FormatSpecificOptions>
+            <SpatialObjSize>8000</SpatialObjSize>
+            <TransactionSize>10000</TransactionSize>
+            <IgnoreDropTableSQLErrors>False</IgnoreDropTableSQLErrors>
+            <PostSQL>ALTER TABLE `dbfinalproject`.`dim_date` 
+CHANGE COLUMN `DateKey` `DateKey` INT NOT NULL ,
+ADD PRIMARY KEY (`DateKey`);
+;</PostSQL>
+            <TableStyle>Quoted</TableStyle>
+            <PreSQL>USE dbfinalproject;
+DROP TABLE IF EXISTS dim_date;</PreSQL>
+            <TransactionMessages>False</TransactionMessages>
+            <OutputOption>Create</OutputOption>
+          </FormatSpecificOptions>
+          <MultiFile value="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <AnnotationText>Read out to MySQL</AnnotationText>
+          <DefaultAnnotationText>DSN=MySQL
+Query=dim_date</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileOutput" />
+    </Node>
+    <Node ToolID="106">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileOutput.DbFileOutput">
+        <Position x="1974" y="246" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <File MaxRecords="" FileFormat="23">odbc:DSN=MySQL;UID=root;PWD=__EncPwd1__|||dim_employment</File>
+          <Passwords>49B64C1CFB3B9D77781C322DF</Passwords>
+          <FormatSpecificOptions>
+            <SpatialObjSize>8000</SpatialObjSize>
+            <TransactionSize>10000</TransactionSize>
+            <IgnoreDropTableSQLErrors>False</IgnoreDropTableSQLErrors>
+            <PostSQL>ALTER TABLE `dbfinalproject`.`dim_employment` 
+CHANGE COLUMN `EmploymentKey` `EmploymentKey` INT NOT NULL ,
+ADD PRIMARY KEY (`EmploymentKey`);
+;</PostSQL>
+            <TableStyle>Quoted</TableStyle>
+            <PreSQL>USE dbfinalproject;
+DROP TABLE IF EXISTS dim_employment;</PreSQL>
+            <TransactionMessages>False</TransactionMessages>
+            <OutputOption>Create</OutputOption>
+          </FormatSpecificOptions>
+          <MultiFile value="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <AnnotationText>Read out to MySQL</AnnotationText>
+          <DefaultAnnotationText>DSN=MySQL
+Query=dim_employment</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileOutput" />
+    </Node>
+    <Node ToolID="107">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileOutput.DbFileOutput">
+        <Position x="1974" y="342" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <File MaxRecords="" FileFormat="23">odbc:DSN=MySQL;UID=root;PWD=__EncPwd1__|||dim_location</File>
+          <Passwords>49B64C1CFB3B9D77781C322DF</Passwords>
+          <FormatSpecificOptions>
+            <SpatialObjSize>8000</SpatialObjSize>
+            <TransactionSize>10000</TransactionSize>
+            <IgnoreDropTableSQLErrors>False</IgnoreDropTableSQLErrors>
+            <PostSQL>ALTER TABLE `dbfinalproject`.`dim_location` 
+CHANGE COLUMN `LocationKey` `LocationKey` INT NOT NULL ,
+ADD PRIMARY KEY (`LocationKey`);
+;</PostSQL>
+            <TableStyle>Quoted</TableStyle>
+            <PreSQL>USE dbfinalproject;
+DROP TABLE IF EXISTS dim_location;</PreSQL>
+            <TransactionMessages>False</TransactionMessages>
+            <OutputOption>Create</OutputOption>
+          </FormatSpecificOptions>
+          <MultiFile value="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <AnnotationText>Read out to MySQL</AnnotationText>
+          <DefaultAnnotationText>DSN=MySQL
+Query=dim_location</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileOutput" />
+    </Node>
+    <Node ToolID="108">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileOutput.DbFileOutput">
+        <Position x="1974" y="438" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <File MaxRecords="" FileFormat="23">odbc:DSN=MySQL;UID=root;PWD=__EncPwd1__|||dim_household</File>
+          <Passwords>49B64C1CFB3B9D77781C322DF</Passwords>
+          <FormatSpecificOptions>
+            <SpatialObjSize>8000</SpatialObjSize>
+            <TransactionSize>10000</TransactionSize>
+            <IgnoreDropTableSQLErrors>False</IgnoreDropTableSQLErrors>
+            <PostSQL>ALTER TABLE `dbfinalproject`.`dim_household` 
+CHANGE COLUMN `HouseholdKey` `HouseholdKey` INT NOT NULL ,
+ADD PRIMARY KEY (`HouseholdKey`);
+;</PostSQL>
+            <TableStyle>Quoted</TableStyle>
+            <PreSQL>USE dbfinalproject;
+DROP TABLE IF EXISTS dim_household;</PreSQL>
+            <TransactionMessages>False</TransactionMessages>
+            <OutputOption>Create</OutputOption>
+          </FormatSpecificOptions>
+          <MultiFile value="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <AnnotationText>Read out to MySQL</AnnotationText>
+          <DefaultAnnotationText>DSN=MySQL
+Query=dim_household</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileOutput" />
+    </Node>
+  </Nodes>
+  <Connections>
+    <Connection>
+      <Origin ToolID="16" Connection="Output" />
+      <Destination ToolID="17" Connection="Input2" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="17" Connection="Output26" />
+      <Destination ToolID="18" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="18" Connection="Output" />
+      <Destination ToolID="59" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="26" Connection="Output" />
+      <Destination ToolID="33" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="33" Connection="Output" />
+      <Destination ToolID="34" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="34" Connection="Output" />
+      <Destination ToolID="39" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="35" Connection="Output" />
+      <Destination ToolID="36" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="36" Connection="Output" />
+      <Destination ToolID="58" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="39" Connection="Output" />
+      <Destination ToolID="35" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="40" Connection="Output26" />
+      <Destination ToolID="41" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="41" Connection="Output" />
+      <Destination ToolID="52" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="52" Connection="Output" />
+      <Destination ToolID="60" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="53" Connection="Output" />
+      <Destination ToolID="74" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="58" Connection="True" />
+      <Destination ToolID="40" Connection="Input2" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="59" Connection="True" />
+      <Destination ToolID="72" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="60" Connection="False" />
+      <Destination ToolID="73" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="62" Connection="Join" />
+      <Destination ToolID="78" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="62" Connection="Join" />
+      <Destination ToolID="103" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="72" Connection="False" />
+      <Destination ToolID="62" Connection="Left" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="74" Connection="Output" />
+      <Destination ToolID="62" Connection="Right" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="73" Connection="True" />
+      <Destination ToolID="53" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="78" Connection="Output" />
+      <Destination ToolID="85" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="78" Connection="Output" />
+      <Destination ToolID="87" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="78" Connection="Output" />
+      <Destination ToolID="89" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="78" Connection="Output" />
+      <Destination ToolID="91" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="85" Connection="Output" />
+      <Destination ToolID="86" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="86" Connection="Output" />
+      <Destination ToolID="105" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="87" Connection="Output" />
+      <Destination ToolID="88" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="88" Connection="Output" />
+      <Destination ToolID="106" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="89" Connection="Output" />
+      <Destination ToolID="90" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="90" Connection="Output" />
+      <Destination ToolID="107" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="91" Connection="Output" />
+      <Destination ToolID="92" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="92" Connection="Output" />
+      <Destination ToolID="108" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="103" Connection="Output" />
+      <Destination ToolID="104" Connection="Input" />
+    </Connection>
+  </Connections>
+  <Properties>
+    <Memory default="True" />
+    <GlobalRecordLimit value="0" />
+    <TempFiles default="True" />
+    <Annotation on="True" includeToolName="False" />
+    <ConvErrorLimit value="10" />
+    <ConvErrorLimit_Stop value="False" />
+    <CancelOnError value="False" />
+    <DisableBrowse value="False" />
+    <EnablePerformanceProfiling value="False" />
+    <PredictiveToolsCodePage value="1252" />
+    <DisableAllOutput value="False" />
+    <ShowAllMacroMessages value="False" />
+    <ShowConnectionStatusIsOn value="True" />
+    <ShowConnectionStatusOnlyWhenRunning value="True" />
+    <ZoomLevel value="0" />
+    <LayoutType>Horizontal</LayoutType>
+    <MetaInfo>
+      <NameIsFileName value="True" />
+      <Name>Initial Workflow</Name>
+      <Description />
+      <RootToolName />
+      <ToolVersion />
+      <ToolInDb value="False" />
+      <CategoryName />
+      <SearchTags />
+      <Author />
+      <Company />
+      <Copyright />
+      <DescriptionLink actual="" displayed="" />
+      <Example>
+        <Description />
+        <File />
+      </Example>
+      <WorkflowId value="9baca517-217a-44c7-b55d-59f0cda25432" />
+      <Telemetry>
+        <PreviousWorkflowId value="a0a5aabe-3781-40c1-8fb2-c56140b32707" />
+        <OriginWorkflowId value="a0a5aabe-3781-40c1-8fb2-c56140b32707" />
+      </Telemetry>
+    </MetaInfo>
+    <Events>
+      <Enabled value="True" />
+    </Events>
+  </Properties>
+</AlteryxDocument>
